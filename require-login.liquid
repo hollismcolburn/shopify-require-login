@@ -1,0 +1,13 @@
+    {% unless customer %}
+    {% if template contains 'customers' %}
+    {% assign send_to_login = false %}
+    {% else %}
+    {% assign send_to_login = true %}
+    {% endif %}
+    {% endunless %}
+    
+    {% if send_to_login and request.path == "/pages/record-progress" %}
+    <meta content="0; url=/account/login" http-equiv="refresh" />
+
+    
+    {% endif %}
